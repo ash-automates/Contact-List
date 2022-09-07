@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "../../styles/Contacts.module.css";
 
 export const getStaticProps = async function () {
@@ -16,11 +17,11 @@ const Contacts = ({ contacts }) => {
       <h1>All Contacts</h1>
       {contacts.map((contact) => {
         return (
-          <div key={contact.id}>
+          <Link href={`/contacts/${contact.id}`} key={contact.id}>
             <a className={styles.single}>
               <h3>{contact.name}</h3>
             </a>
-          </div>
+          </Link>
         );
       })}
     </div>
