@@ -11,7 +11,8 @@ const Layout = (properties) => {
         <title>
           {pathname == "/"
             ? "Home"
-            : pathname[1].toUpperCase() + pathname.substring(2)}
+            : pathname[1].toUpperCase() +
+              pathname.substring(2, pathname.lastIndexOf("/"))}
         </title>
         <meta name="keywords" content="contacts" />
       </Head>
